@@ -57,3 +57,13 @@ Server-enforced identity/authorization, transactional shared inventory, database
 - `mobile.png`: mobile hotel search.
 
 Screenshots show illustrative test data. The portable ZIP includes this HTML, guide and screenshots.
+
+## Leo hotel profile and individual rooms
+
+Hotel Leo International's name and Gangtok location come from the owner. Its actual phone, address, photographs, room numbers and total inventory have not been independently verified. The existing room-type stock and rates remain explicitly illustrative.
+
+The owner supplied `www.istytion.com` as a possible information source. Attempts to access both `https://www.istytion.com/` and `https://istytion.com/`, Google and Bing were blocked by the environment's HTTPS proxy with CONNECT 403. This does not establish whether the candidate site is correct, exists or contains this hotel. Search and candidate-site domains were saved to the environment's draft custom allowlist; the user must save/apply those settings before access can be retried.
+
+Hotel authorities can now enter contact details, a website/Maps link, up to five HTTPS gallery image URLs or JPEG/PNG/WEBP uploads of at most 500 KB each, and individual room profiles with actual room number, type, floor, photograph and description. Agent and owner detail views display those owner-entered records. Individual room profiles do not yet allocate physical room numbers to bookings; booking and date availability still use room-type inventory. Do not infer that the number of entered profiles is the hotel's complete inventory.
+
+Uploaded photographs and profile edits are browser-local. They are not automatically included in the public source or visible on other devices. Saved local images are limited by the browser storage quota; large galleries need a production image store. HTTPS image links are displayed as supplied and must point to the intended hotel's actual photographs. Contact details and photographs remain marked as owner-provided until an independent source check is completed.
