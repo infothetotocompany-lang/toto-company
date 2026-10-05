@@ -23,7 +23,7 @@ python -m http.server 8000 --bind 127.0.0.1 --directory /workspace/toto-company/
 
 ## Sample pricing rules
 
-- All rates, locations, contact information, room configurations, illustrations and policies are examples, including those for the named Leo hotel. They are not verified hotel information.
+- Leo hotel photos, address, 14 listed room numbers/types/floors/occupancies and published room prices were retrieved from the owner-selected listing. The nightly prices are converted to INR for this demo. Actual current stock and final terms still require the hotel owner. Other hotels remain fictional samples. Child, meal, tax, check-in/out and cancellation settings are still illustrative, not researched Leo policy.
 - Default sample tax: **12%**, applied to room + child + meal charges. This is a demonstration assumption, not tax advice or a determination of an applicable rate.
 - Up to the configured free-child age, children share existing beds without child room charges. Older children incur the configured nightly child fee.
 - Meal charges apply per adult and per older child per night. A hotel's room type has explicit adult/child occupancy limits.
@@ -60,10 +60,14 @@ Screenshots show illustrative test data. The portable ZIP includes this HTML, gu
 
 ## Leo hotel profile and individual rooms
 
-Hotel Leo International's name and Gangtok location come from the owner. Its actual phone, address, photographs, room numbers and total inventory have not been independently verified. The existing room-type stock and rates remain explicitly illustrative.
+The supplied website is now accessible. Its Hotel → India → Gangtok → Hotel Leo International page lists 14 rooms with numbers, types, floors, occupancy and prices. Six original hotel photographs were downloaded without editing and embedded in the standalone HTML, so the demo does not depend on the listing's live images. Original image files and the research record are also retained in assets/leo and LEO-SOURCES.md.
 
-The owner supplied `www.istytion.com` as a possible information source. Attempts to access both `https://www.istytion.com/` and `https://istytion.com/`, Google and Bing were blocked by the environment's HTTPS proxy with CONNECT 403. This does not establish whether the candidate site is correct, exists or contains this hotel. Search and candidate-site domains were saved to the environment's draft custom allowlist; the user must save/apply those settings before access can be retried.
+Toto Company's design, roles, pending/approval workflow and own booking forms remain the product. No external agency name, telephone, booking link or agency branding is displayed in the hotel flow. Research provenance stays in the documentation. The hotel-specific direct phone is not separately published on that page and remains awaiting owner confirmation.
 
-Hotel authorities can now enter contact details, a website/Maps link, up to five HTTPS gallery image URLs or JPEG/PNG/WEBP uploads of at most 500 KB each, and individual room profiles with actual room number, type, floor, photograph and description. Agent and owner detail views display those owner-entered records. Individual room profiles do not yet allocate physical room numbers to bookings; booking and date availability still use room-type inventory. Do not infer that the number of entered profiles is the hotel's complete inventory.
+The listing prices are BDT 4,500, 5,000 and 5,500. The indicative currency API for 2026-10-05 gives **1 BDT = 0.78428014 INR**. Converted demo rates, rounded to paise, are **INR 3,529.26**, **3,921.40** and **4,313.54** per room/night. No agency commission or new commercial margin was added to those converted base rates. Extra charges remain the existing configurable demo assumptions. These are not a bank settlement rate or a guarantee of today's hotel selling price.
 
-Uploaded photographs and profile edits are browser-local. They are not automatically included in the public source or visible on other devices. Saved local images are limited by the browser storage quota; large galleries need a production image store. HTTPS image links are displayed as supplied and must point to the intended hotel's actual photographs. Contact details and photographs remain marked as owner-provided until an independent source check is completed.
+The 14 room profiles share the representative room-type images used by the source; those images are explicitly not verified photos of the specific numbered room. Room-type inventory is grouped by published category and occupancy. Booking still selects a room type/count, not an assigned physical room number. The hotel must confirm child/extra-bed treatment of occupancy such as 2+1 and 2+2, final inventory, availability, rates and policies.
+
+Prior saved sample booking records/quotes and owner contact entries are preserved. Old sample room types referenced by those records are retained as retired types, excluded from new available inventory. Pending retired-type requests require a new request against the imported room types. Old quote snapshots are not silently converted or repriced.
+
+Hotel authorities can edit contact details, gallery images, individual profiles and inventory. Owner/agent views share those changes within the same browser. Browser entries do not synchronize across devices or publish themselves to GitHub. HTTPS gallery URLs and small JPEG/PNG/WEBP uploads are supported, subject to the local storage quota. Production storage and actual hotel authentication remain separate work.
