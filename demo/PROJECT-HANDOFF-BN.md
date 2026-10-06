@@ -56,3 +56,10 @@ GitHub রিপোজিটরি: `infothetotocompany-lang/toto-company`। `d
 ব্রাউজারে এন্ট্রি করা বুকিং ও আপলোড করা ছবি localStorage-এ থাকে। অন্য ডিভাইসে বা GitHub-এ নিজে থেকে যায় না। এই ব্যাকআপে কোডের default hotel data ও ছবিগুলো আছে; আপনার নিজের ব্রাউজারে পরে করা আলাদা এন্ট্রি নেওয়ার জন্য সেই ব্রাউজার থেকে আলাদা export করতে হবে।
 
 আপনার ব্যক্তিগত কম্পিউটার/ড্রাইভে সরাসরি লেখার access নেই। ZIP/Git bundle ডাউনলোড করে নিজের ড্রাইভে রাখুন। শুধু এই cloud workspace বা চ্যাটের ওপর স্থায়ী সংরক্ষণের জন্য নির্ভর করবেন না। Cloud snapshot রাখতে environment settings review/save করে publish করুন।
+# পরবর্তী WordPress কাজ — ৬ অক্টোবর ২০২৬
+
+মালিক www.hocab.in-এ নিজের হোস্টিংয়ের WordPress-এ সম্পূর্ণ booking portal চালাতে বলেছেন। `wordpress/toto-partner-booking.zip` এখন WordPress login/shared database-ভিত্তিক plugin: agent/hotel roles, hotel assignment, hotel/room/rate/daily inventory, pending/approval/cancellation, quote snapshot, manual payment/refund ledger, audit trail, voucher ও CSV/report। এটি পুরোনো preview plugin থেকে আলাদা। Activate করলে full-page template-সহ একটি draft portal তৈরি হয়; admin তা preview/publish করেন।
+
+Docker-এ WordPress/PHP/MariaDB চালিয়ে REST permission/privacy, quote, inventory/cancellation/ledger এবং simultaneous last-room approval পরীক্ষা হয়েছে। Chromium-এ দুই account-এর shared booking flow, gallery, mobile ও standalone login পরীক্ষা হয়েছে। Credentials এবং পরীক্ষার database repository-তে নেই। Phone/policies/rates মালিক নিশ্চিত না করলে imported Leo-তে booking enabled হয় না।
+
+hocab.in-এ login/upload access পাওয়া যায়নি; সেখানে plugin install বা site publication হয়নি। এই চ্যাটে WordPress login panel/control বা নিরাপদ credential connection নেই। Payment gateway, external notifications ও live-host configuration পৃথক সংযোগ। Install নির্দেশনা `wordpress/toto-partner-booking/README-BN.md`-এ আছে।

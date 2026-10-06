@@ -1,6 +1,6 @@
 # সংরক্ষণ ও পরে হোস্টিংয়ে নেওয়ার নির্দেশনা
 
-এই প্রজেক্ট টোটো কোম্পানির হোটেল পার্টনার বুকিং প্ল্যাটফর্মের কনসেপ্ট ডেমো। মালিক প্রবীর দত্ত; নিজস্ব হোটেল লিও ইন্টারন্যাশনাল, গ্যাংটক। ডোমেন ও হোস্টিং এখনও কেনা হয়নি।
+এই প্রজেক্ট টোটো কোম্পানির হোটেল পার্টনার বুকিং প্ল্যাটফর্মের কনসেপ্ট ডেমো। মালিক প্রবীর দত্ত; নিজস্ব হোটেল লিও ইন্টারন্যাশনাল, গ্যাংটক। শুরুতে ডোমেন ও হোস্টিং কেনা হয়নি। পরে মালিক www.hocab.in এবং নিজের হোস্টিংয়ে WordPress থাকার কথা জানিয়েছেন; এই পরিবেশ থেকে live hosting যাচাই বা login করা যায়নি।
 
 ## সংরক্ষিত জিনিস
 
@@ -27,3 +27,7 @@
 ডোমেন/হোস্টিং কিনলেই এই ডেমো production CRM হয়ে যাবে না। আগে shared database, নিরাপদ login/permissions, transactional inventory, actual hotel content/rates/taxes/commission/cancellation policies, payments/refunds, notifications, backup এবং deployment monitoring তৈরি ও যাচাই করতে হবে। `README.md`-এ সেই কাজগুলোর তালিকা আছে।
 
 পরে কাজ শুরু করার জন্য এই প্রজেক্ট/ZIP এবং এই নির্দেশনা ব্যবহার করুন। হোস্টিংয়ের নাম, ডোমেন এবং যথাযথ access জানা হলে পরবর্তী deployment ধাপ নির্ধারণ করা যাবে। গোপন password বা API key চ্যাটে লিখবেন না; তখন সমর্থিত নিরাপদ credential পদ্ধতি ব্যবহার করতে হবে।
+
+## WordPress সংস্করণ (৬ অক্টোবর ২০২৬)
+
+`../wordpress/toto-partner-booking.zip` নতুন shared-database booking plugin। এটি আগের preview wrapper থেকে আলাদা। Login, assigned hotel/agent access, room/inventory, pending/approval/cancellation, server quotes ও manual ledger যুক্ত হয়েছে। বিস্তারিত `../wordpress/toto-partner-booking/README-BN.md`-এ। WordPress ও MariaDB test installation-এ পরীক্ষা হয়েছে; hocab.in-এ upload এখনও হয়নি।
