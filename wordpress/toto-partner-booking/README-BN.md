@@ -42,3 +42,9 @@ Bookings, inventory, audit ও ledger WordPress database-এর `*_toto_*` table
 ## যাচাই
 
 আলাদা Docker WordPress/PHP 8.2/MariaDB 11.4-এ activation, InnoDB schema পুনরায় চালু করা, REST permission/privacy checks, quote math, pending/approval/cancellation, inventory guards, ledger/refund এবং simultaneous approval পরীক্ষা করা হয়েছে। Chromium-এ WordPress login, availability, request, owner approval, অন্য account-এ refresh, mobile layout এবং report পরীক্ষা করা হয়েছে। পরীক্ষা আপনার hosting/theme/plugins-এর সামঞ্জস্যের নিশ্চয়তা দেয় না; draft page-এ নিজস্ব installation পরীক্ষা করুন। `../tests`-এ পুনরায় চালানোর integration test রাখা আছে।
+
+## নতুন হোমপেজ — সংস্করণ 0.2.0
+
+হোটেলের আসল ছবি, responsive হোমপেজ, হোটেল কার্ড, বুকিংয়ের তিন ধাপ এবং দুই পক্ষের portal link যুক্ত হয়েছে। Plugin ZIP আবার Upload Plugin দিয়ে দিলে WordPress-এর “Replace current with uploaded” ব্যবহার করুন; plugin বা database delete করবেন না। তারপর Tools → Toto Booking Setup → “নতুন হোমপেজ চালু করুন” চাপলে একটি নতুন homepage প্রকাশ করে front-page সেট হবে। এই পদক্ষেপে পুরোনো পেজ delete হয় না। পূর্বের show_on_front/page_on_front option `toto_previous_front_page`-এ রাখা হয়; Settings → Reading থেকে আগের পেজ ফেরানো যায়। Plugin deactivate করার আগে homepage-এর template/content বদলাতে হবে।
+
+এই সংস্করণের homepage PHP syntax, WordPress rendering, image loading, portal links, desktop/mobile, admin permission/nonce এবং homepage publishing পরীক্ষা হয়েছে। Live hocab.in-এ এই সংস্করণ এখনও install করা হয়নি।

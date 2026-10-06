@@ -2,13 +2,14 @@
 /**
  * Plugin Name: Toto Partner Hotel Booking
  * Description: WordPress agent and hotel booking portal with shared inventory and hotel approval.
- * Version: 0.1.0
+ * Version: 0.2.0
  * Requires at least: 6.0
  * Requires PHP: 7.4
  * Author: Toto Company
  * License: GPL-2.0-or-later
  */
 if (!defined('ABSPATH')) { exit; }
+require_once __DIR__.'/home.php';
 final class Toto_Partner_Booking {
     const NS = 'toto-booking/v1';
     static function table($name) { global $wpdb; return $wpdb->prefix . 'toto_' . $name; }
@@ -174,12 +175,13 @@ final class Toto_Partner_Booking {
     static function setup_page() {
         if(!self::admin())return;
         $id=(int)get_option('toto_portal_page');
+        echo '<div class="wrap"><h2>Toto Company — নতুন হোমপেজ</h2><p>আসল হোটেলের ছবি, হোটেল কার্ড ও বুকিং পোর্টালের লিংকসহ ডিজাইন। এই বোতাম হোমপেজ প্রকাশ ও front-page সেট করবে; পুরোনো পেজ মুছবে না।</p><form method="post" action="'.esc_url(admin_url('admin-post.php')).'"><input type="hidden" name="action" value="toto_install_home">';wp_nonce_field('toto_install_home');echo '<button class="button button-primary">নতুন হোমপেজ চালু করুন</button></form></div>';
         echo '<div class="wrap"><h1>Toto Hotel Booking</h1><p>WordPress-এর shared database, agent login ও hotel approval ব্যবস্থা।</p><ol><li>পোর্টালের draft পেজে Preview দিয়ে পরীক্ষা করুন। অনুমোদিত হলে Publish করুন। বর্তমান homepage পরিবর্তন করা হয়নি।</li><li>পোর্টালে লিওর তথ্য যোগ করুন। হোটেলের নিজস্ব ফোন, বর্তমান রেট, রুম ও নীতি যাচাই করে বুকিং চালু করুন।</li><li>Users → Add New দিয়ে Toto Booking Agent এবং Toto Hotel Authority অ্যাকাউন্ট তৈরি করুন।</li><li>হোটেল কর্তৃপক্ষের User Profile-এ Assigned hotel IDs লিখুন; এজেন্টের কমিশন দিন। হোটেলের ID পোর্টালে নামে পাশে দেখা যায়।</li><li>পোর্টাল পেজকে cache থেকে বাদ দিন। HTTPS চালু রাখুন।</li></ol>';
         if($id){echo '<p><a class="button button-primary" href="'.esc_url(get_preview_post_link($id)).'">পোর্টাল Preview</a> <a class="button" href="'.esc_url(get_edit_post_link($id)).'">পেজ Edit / Publish</a></p>';}
         echo '<p>পেমেন্ট/রিফান্ড এখানে হিসাব হিসেবে নথিভুক্ত হয়; online payment gateway বা SMS পাঠানো যুক্ত নেই। পুরোনো browser demo-র বুকিং এখানে নিজে থেকে import হয় না।</p></div>';
     }
-    static function templates($templates) { $templates['toto-booking-standalone.php']='Toto Booking — Full page';return $templates; }
-    static function template($template) { return is_page() && get_page_template_slug()==='toto-booking-standalone.php' ? __DIR__.'/portal-template.php' : $template; }
+    static function templates($templates) { $templates['toto-company-home.php']='Toto Company — Homepage'; $templates['toto-booking-standalone.php']='Toto Booking — Full page';return $templates; }
+    static function template($template) { return is_page() && in_array(get_page_template_slug(),array('toto-booking-standalone.php','toto-company-home.php'),true) ? __DIR__.'/portal-template.php' : $template; }
     static function no_cache() { if(is_page() && (get_page_template_slug()==='toto-booking-standalone.php' || has_shortcode((string)get_post_field('post_content',get_queried_object_id()),'toto_booking'))){if(!defined('DONOTCACHEPAGE'))define('DONOTCACHEPAGE',true);nocache_headers();} }
     static function profile_fields($user) {
         if(!self::admin())return;
